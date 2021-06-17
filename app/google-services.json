@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "934414597291",
+    "firebase_url": "https://shifa-44c24-default-rtdb.firebaseio.com",
+    "project_id": "shifa-44c24",
+    "storage_bucket": "shifa-44c24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934414597291:android:c00b4085b75c2863d24bee",
+        "android_client_info": {
+          "package_name": "android.android.shifa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934414597291-28f0rg7v77uab3cv57v3lkrdju9a18uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWQDZjgTPrVsSPA4rEyeCOI7HzWzAfsCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934414597291-28f0rg7v77uab3cv57v3lkrdju9a18uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Shifa</string>
+    <string name="map_key" translatable="false">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
+
+    <string name="message_write_error">Error Writing Message!</string>
+    <string name="message_write_success">Successfully written to Tag!</string>
+    <string name="message_write_progress">Writing to Tag..</string>
+    <string name="message_tag_detected">NFC Tag Detected!</string>
+    <string name="message_read_tag">Read from NFC Tag</string>
+    <string name="message_write_tag">Write to NFC Tag</string>
+    <string name="message_tap_tag">Tap the NFC Tag to your device!</string>
+    <string name="hint_message">Message</string>
+    <string name="luxury_content">Luxor is a city on the east bank of the Nile River in southern Egypt. It\'s on the site of ancient Thebes, the pharaohs’ capital at the height of their power, during the 16th–11th centuries B.C. Today\'s city surrounds 2 huge, surviving ancient monuments: graceful Luxor Temple and Karnak Temple, a mile north. The royal tombs of the Valley of the Kings and the Valley of the Queens are on the river’s west bank.</string>
+</resources>

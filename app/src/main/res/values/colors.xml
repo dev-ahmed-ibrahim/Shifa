@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0f70ff</color>
+    <color name="colorPrimaryDark">#0f70ff</color>
+    <color name="colorAccent">#0f70ff</color>
+    <color name="item">#808080</color>
+    <color name="overlay_dark_30">#4D000000</color>
+    <color name="overlay_dark_60">#99000000</color>
+    <color name="overlay_dark_90">#E6000000</color>
+    <color name="overlay_light_80">#CCFFFFFF</color>
+    <color name="overlay_light_10">#1AFFFFFF</color>
+    <color name="overlay_light_50">#8FFFFFF0</color>
+    <color name="overlay_light_60">#99FFFFFF</color>
+</resources>

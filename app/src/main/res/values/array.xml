@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="department">
+        <item>Specialization</item>
+        <item>Immunology</item>
+        <item>Anesthesiology</item>
+        <item>Dermatology</item>
+        <item>Radiology</item>
+        <item>Neurology</item>
+        <item>Gynecology</item>
+        <item>Ophthalmology</item>
+        <item>Pathology</item>
+        <item>Pediatrics</item>
+        <item>Psychiatry</item>
+        <item>Oncology</item>
+        <item>Surgery</item>
+        <item>Urology</item>
+    </string-array>
+
+    <string-array name="hospitals">
+        <item>Work Hospital</item>
+        <item>Cleopatra Hospital</item>
+        <item>Coptic Hospital</item>
+        <item>Dar Al Fouad Hospital</item>
+        <item>Dar Al Hekma Hospital</item>
+        <item>International Medical Center</item>
+        <item>Misr Al Amal Hospital</item>
+        <item>Nile Badrawi Hospital</item>
+        <item>Red Crescent Hospital</item>
+        <item>Zohairy Hospital</item>
+        <item>Hassabo Hospital Hospital</item>
+        <item>South Sinai Hospital</item>
+        <item>National Heart Institute</item>
+        <item>Rehab Hospital</item>
+        <item>National Cancer Institute</item>
+        <item>Cairo Medical Center</item>
+        <item>Ibn Sina Hospital</item>
+        <item>Agial Hospital</item>
+    </string-array>
+
+    <string-array name="bloodtypes">
+        <item>Blood Group</item>
+        <item>O-</item>
+        <item>O+</item>
+        <item>A-</item>
+        <item>A+</item>
+        <item>B-</item>
+        <item>B+</item>
+        <item>AB-</item>
+        <item>AB+</item>
+    </string-array>
+</resources>

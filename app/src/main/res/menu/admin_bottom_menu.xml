@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/admin_requests"
+        android:icon="@drawable/nfc2"
+        android:title="doctors" />
+
+    <item
+        android:id="@+id/admin_doctors"
+        android:icon="@drawable/vaccine"
+        android:title="doctors" />
+
+    <item
+        android:id="@+id/admin_patients"
+        android:icon="@drawable/doctor"
+        android:title="doctors" />
+
+    <item
+        android:id="@+id/admin_paramedics"
+        android:icon="@drawable/ambulance2"
+        android:title="doctors" />
+
+    <item
+        android:id="@+id/admin_profile"
+        android:icon="@drawable/profile"
+        android:title="profile" />
+</menu>
