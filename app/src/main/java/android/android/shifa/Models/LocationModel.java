@@ -1,13 +1,13 @@
 package android.android.shifa.Models;
 
 public class LocationModel {
-    String nfc_id, text, name, emergency, bloodtype, disease, notes, latitude, longitude;
+    String nfc_id, text, name, emergency, bloodtype, disease, notes, latitude, longitude,gustName,gustNumber;
 
     public LocationModel() {
     }
 
 
-    public LocationModel(String nfc_id, String text, String name, String emergency, String bloodtype, String disease, String notes, String latitude, String longitude) {
+    public LocationModel(String nfc_id, String text, String name, String emergency, String bloodtype, String disease, String notes, String latitude, String longitude,String gustName,String gustNumber) {
         this.nfc_id = nfc_id;
         this.text = text;
         this.name = name;
@@ -17,6 +17,24 @@ public class LocationModel {
         this.notes = notes;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.gustName = gustName;
+        this.gustNumber = gustNumber;
+    }
+
+    public String getGustName() {
+        return gustName;
+    }
+
+    public void setGustName(String gustName) {
+        this.gustName = gustName;
+    }
+
+    public String getGustNumber() {
+        return gustNumber;
+    }
+
+    public void setGustNumber(String gustNumber) {
+        this.gustNumber = gustNumber;
     }
 
     public String getNfc_id() {

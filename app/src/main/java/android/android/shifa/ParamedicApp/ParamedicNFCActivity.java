@@ -231,6 +231,7 @@ public class ParamedicNFCActivity extends AppCompatActivity implements Listener,
 
     @Override
     public void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
         Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
         Log.d(TAG, "onNewIntent: " + intent.getAction());
@@ -251,7 +252,7 @@ public class ParamedicNFCActivity extends AppCompatActivity implements Listener,
     }
 
     public void sendRequest(String nfc_id, String full_name, String emergency_number, String blood_type, String disease_patient, String notes, String latitude, String longitude) {
-        LocationModel locationModel = new LocationModel(nfc_id, full_name, emergency_number, blood_type, disease_patient, "", notes, latitude, longitude);
+        LocationModel locationModel = new LocationModel(nfc_id, full_name, emergency_number, blood_type, disease_patient, "", notes, latitude, longitude, "", "");
 
         String request_key = databaseReference.child("AllRequests").push().getKey();
 

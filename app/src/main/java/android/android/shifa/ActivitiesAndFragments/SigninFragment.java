@@ -21,6 +21,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.biometric.BiometricManager;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,6 +37,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.victor.loading.rotate.RotateLoading;
+
+import java.util.concurrent.Executor;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -87,6 +92,13 @@ public class SigninFragment extends Fragment {
         forgotpassword = view.findViewById(R.id.forgot_password_txt);
         rotateLoading = view.findViewById(R.id.signinrotateloading);
         checkBox = view.findViewById(R.id.remember_me_checkbox);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user != null)
+        {
+            fingerprint();
+        }
 
         forgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -288,5 +300,62 @@ public class SigninFragment extends Fragment {
         String UserID = user.getUid();
 
         return UserID;
+    }
+
+    private void fingerprint() {
+        BiometricManager biometricManager = BiometricManager.from(requireContext());
+        switch (biometricManager.canAuthenticate()) {
+            case BiometricManager.BIOMETRIC_SUCCESS:
+                Toast.makeText(requireContext(), "You can use the fingerprint to login", Toast.LENGTH_LONG).show();
+                if(user != null)
+                {
+                    fingerprintDialog();
+                }
+                break;
+            case BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE:
+                Toast.makeText(requireContext(), "The device don't have a fingerprint sensor", Toast.LENGTH_LONG).show();
+                break;
+            case BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE:
+                Toast.makeText(requireContext(), "The biometric sensor is currently unavailable", Toast.LENGTH_LONG).show();
+                break;
+            case BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED:
+                Toast.makeText(requireContext(), "Your device don't have fingerprint saved please check security settings", Toast.LENGTH_LONG).show();
+                break;
+        }
+
+    }
+
+    private void fingerprintDialog() {
+
+        Executor executor = ContextCompat.getMainExecutor(requireContext());
+        BiometricPrompt biometricPrompt = new BiometricPrompt(SigninFragment.this, executor, new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull @org.jetbrains.annotations.NotNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+            }
+
+            @Override
+            public void onAuthenticationSucceeded(@NonNull @org.jetbrains.annotations.NotNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                Toast.makeText(requireContext(), "Login Success... ", Toast.LENGTH_LONG).show();
+
+
+                category();
+
+
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+            }
+        });
+
+        BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Login")
+                .setDescription("Use your fingerprint to login \n or \n Use your face detected")
+                .setNegativeButtonText("Cancel")
+                .build();
+        biometricPrompt.authenticate(promptInfo);
     }
 }

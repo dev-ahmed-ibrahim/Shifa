@@ -164,6 +164,28 @@
                     android:padding="10dp"
                     android:visibility="gone" />
 
+                <EditText
+                    android:id="@+id/gust_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Gust Name"
+                    android:padding="10dp" />
+
+                <EditText
+                    android:id="@+id/gust_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Gust Number"
+                    android:padding="10dp" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

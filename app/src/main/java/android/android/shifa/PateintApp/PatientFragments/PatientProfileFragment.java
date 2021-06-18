@@ -390,7 +390,7 @@ public class PatientProfileFragment extends Fragment implements Listener, Google
     }
 
     private void sendRequest(String noote, String latitude, String longitude) {
-        LocationModel locationModel = new LocationModel(nfcid, nfc_id_txt, full_name, emergency_number, blood_type, disease_patient, noote, latitude, longitude);
+        LocationModel locationModel = new LocationModel(nfcid, nfc_id_txt, full_name, emergency_number, blood_type, disease_patient, noote, latitude, longitude, "", "");
 
         String request_key = databaseReference.child("AllRequests").push().getKey();
 

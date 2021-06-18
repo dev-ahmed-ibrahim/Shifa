@@ -65,7 +65,7 @@ public class GuestActivity extends AppCompatActivity implements Listener, Google
     SwipeRefreshLayout swipeRefreshLayout;
     MaterialRippleLayout first_aid_card;
     Button scan_nfc, sendlocation;
-    EditText patient_notes, nfc_id;
+    EditText patient_notes, nfc_id, gust_name, gust_number;;
     String nfcid, namee, emergencyy, bloodtypee, diseasee, noote;
     GoogleApiClient googleApiClient;
     Location lastlocation;
@@ -94,6 +94,8 @@ public class GuestActivity extends AppCompatActivity implements Listener, Google
         sendlocation = findViewById(R.id.send_location_btn);
         patient_notes = findViewById(R.id.patient_note_field);
         nfc_id = findViewById(R.id.nfc_Idd);
+        gust_name = findViewById(R.id.gust_name);
+        gust_number = findViewById(R.id.gust_phone);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
@@ -171,6 +173,8 @@ public class GuestActivity extends AppCompatActivity implements Listener, Google
                     String text = ttext.getText().toString();
                     //   nfcid = ttext.getText().toString();
                     noote = patient_notes.getText().toString();
+                    String gustName = gust_name.getText().toString();
+                    String gustNumber = gust_number.getText().toString();
 
                   /*  if (nfcid.isEmpty()) {
                         nfcid = ttext.getText().toString();
@@ -178,17 +182,21 @@ public class GuestActivity extends AppCompatActivity implements Listener, Google
                         sendRequest(nfcid,text, namee, emergencyy, bloodtypee, diseasee, noote, latitude, longitude);
                         return;
                     }
-
                    */
+
+                    if (gustNumber.isEmpty() || gustName.isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "Please write your name and phone number", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
                     if (text.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "QR-Code not scanned, Proceeding with NFC!", Toast.LENGTH_SHORT).show();
-                        sendRequest(nfcid, text, namee, emergencyy, bloodtypee, diseasee, noote, latitude, longitude);
+                        sendRequest(nfcid, text, namee, emergencyy, bloodtypee, diseasee, noote, latitude, longitude, gustName,gustNumber);
                         return;
                     } else {
                         nfcid = ttext.getText().toString();
                         Toast.makeText(getApplicationContext(), "NFC not scanned, Proceeding with QR-Code!", Toast.LENGTH_SHORT).show();
-                        sendRequest(nfcid, text, namee, emergencyy, bloodtypee, diseasee, noote, latitude, longitude);
+                        sendRequest(nfcid, text, namee, emergencyy, bloodtypee, diseasee, noote, latitude, longitude, gustName,gustNumber);
                     }
 
                     if (TextUtils.isEmpty(noote)) {
@@ -357,8 +365,8 @@ public class GuestActivity extends AppCompatActivity implements Listener, Google
         }
     }
 
-    public void sendRequest(String nfc_id, String text, String full_name, String emergency_number, String blood_type, String disease_patient, String notes, String latitude, String longitude) {
-        LocationModel locationModel = new LocationModel(nfc_id, text, full_name, emergency_number, blood_type, disease_patient, notes, latitude, longitude);
+    public void sendRequest(String nfc_id, String text, String full_name, String emergency_number, String blood_type, String disease_patient, String notes, String latitude, String longitude, String gustName,String gustNumber) {
+        LocationModel locationModel = new LocationModel(nfc_id,text, full_name, emergency_number, blood_type, disease_patient, notes, latitude, longitude, gustName, gustNumber);
 
         String request_key = databaseReference.child("AllRequests").push().getKey();
 

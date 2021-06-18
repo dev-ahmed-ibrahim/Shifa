@@ -5,6 +5,7 @@ import android.android.shifa.DoctorApp.DoctorMainActivity;
 import android.android.shifa.ParamedicApp.ParamedicMainActivity;
 import android.android.shifa.PateintApp.PatientMainActivity;
 import android.android.shifa.R;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -52,7 +53,12 @@ public class SplashScreen extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         if (user != null) {
-            category();
+            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            {
+                startActivity(intent,
+                        ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this).toBundle());
+            }
         } else {
             TimerTask task = new TimerTask() {
                 @Override
