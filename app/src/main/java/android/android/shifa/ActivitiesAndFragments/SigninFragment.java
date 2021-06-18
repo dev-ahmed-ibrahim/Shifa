@@ -95,7 +95,7 @@ public class SigninFragment extends Fragment {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-        //finger print
+        //finger print add
         if(user != null)
         {
             fingerprint();
