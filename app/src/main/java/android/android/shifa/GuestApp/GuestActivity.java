@@ -94,6 +94,7 @@ public class GuestActivity extends AppCompatActivity implements Listener, Google
         sendlocation = findViewById(R.id.send_location_btn);
         patient_notes = findViewById(R.id.patient_note_field);
         nfc_id = findViewById(R.id.nfc_Idd);
+        //gust info add
         gust_name = findViewById(R.id.gust_name);
         gust_number = findViewById(R.id.gust_phone);
 
