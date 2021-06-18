@@ -52,6 +52,7 @@ public class SplashScreen extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+        //change login auto login
         if (user != null) {
             Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
