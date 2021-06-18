@@ -61,6 +61,7 @@ public class ParamedicNFCActivity extends AppCompatActivity implements Listener,
     private boolean isWrite = false;
     private NfcAdapter mNfcAdapter;
 
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
