@@ -19,6 +19,7 @@ public class LocationModel {
         this.longitude = longitude;
         this.gustName = gustName;
         this.gustNumber = gustNumber;
+
     }
 
     public String getGustName() {
