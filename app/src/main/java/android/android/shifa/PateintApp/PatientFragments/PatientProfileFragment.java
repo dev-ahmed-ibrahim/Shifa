@@ -102,6 +102,7 @@ public class PatientProfileFragment extends Fragment implements Listener, Google
     String selected_placeimaeURL = "";
     Uri photoPath;
 
+
     GoogleApiClient googleApiClient;
     Location lastlocation;
     LocationRequest locationRequest;
