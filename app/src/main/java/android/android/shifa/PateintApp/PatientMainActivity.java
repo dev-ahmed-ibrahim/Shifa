@@ -42,6 +42,7 @@ public class PatientMainActivity extends AppCompatActivity {
         } else {
             Fragment doctors = new DoctorsFragment();
             loadFragment(doctors);
+
         }
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
