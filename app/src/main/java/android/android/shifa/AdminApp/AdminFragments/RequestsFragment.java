@@ -244,14 +244,16 @@ public class RequestsFragment extends Fragment {
         dialog.getWindow().setAttributes(lp);
     }
 
-    public static class AdminRequestsViewHolder extends RecyclerView.ViewHolder {
-        ImageView doctor_mobile, remove_request;
+    public static class AdminRequestsViewHolder extends RecyclerView.ViewHolder
+    {
+        ImageView doctor_mobile,remove_request;
         CircleImageView doctor_picture;
-        TextView doctor_name, doctor_specailty, disease_txt, notes_txt;
+        TextView doctor_name,doctor_specailty,disease_txt,notes_txt, gust_name, gust_number;
         MaterialRippleLayout doctor_details;
         Button view_profile_btn;
 
-        AdminRequestsViewHolder(View itemView) {
+        AdminRequestsViewHolder(View itemView)
+        {
             super(itemView);
 
             doctor_picture = itemView.findViewById(R.id.doctor_profile_picture);
@@ -263,13 +265,18 @@ public class RequestsFragment extends Fragment {
             view_profile_btn = itemView.findViewById(R.id.view_profile_btn);
             disease_txt = itemView.findViewById(R.id.disease_txt);
             notes_txt = itemView.findViewById(R.id.note_txt);
+            gust_name = itemView.findViewById(R.id.gust_name_admin);
+            gust_number = itemView.findViewById(R.id.gust_number_admin);
         }
 
-        void BindPlaces(final LocationModel locationModel) {
+        void BindPlaces(final LocationModel locationModel)
+        {
             doctor_name.setText(locationModel.getName());
             doctor_specailty.setText(locationModel.getNfc_id());
             disease_txt.setText(locationModel.getText());
             notes_txt.setText(locationModel.getNotes());
+            gust_name.setText(locationModel.getGustName());
+            gust_number.setText(locationModel.getGustNumber());
         }
     }
 }

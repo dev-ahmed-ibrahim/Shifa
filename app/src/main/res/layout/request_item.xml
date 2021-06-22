@@ -1,61 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginRight="10dp"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    >
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
 
         <com.balysv.materialripple.MaterialRippleLayout
             android:id="@+id/details_btn"
-            style="@style/RippleStyleGrey"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="@style/RippleStyleGrey"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:gravity="center"
+                android:padding="10dp"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    >
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/doctor_profile_picture"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_marginRight="20dp"
                         android:layout_weight="1"
-                        android:src="@drawable/planetearth" />
+                        android:src="@drawable/planetearth"
+                        android:layout_marginRight="20dp"
+                        />
 
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2">
+                        android:layout_weight="2"
+                        >
 
                         <ImageView
                             android:id="@+id/delete_request"
                             android:layout_width="35dp"
                             android:layout_height="35dp"
+                            android:src="@drawable/ic_delete_forever_black_24dp"
                             android:layout_alignParentRight="true"
-                            android:src="@drawable/ic_delete_forever_black_24dp" />
+                            />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            >
 
                             <TextView
                                 android:id="@+id/doctor_fullname"
@@ -63,69 +73,97 @@
                                 android:layout_height="wrap_content"
                                 android:text="android android"
                                 android:textColor="#000"
-                                android:textSize="20sp"
+                                android:visibility="gone"
                                 android:textStyle="bold"
-                                android:visibility="gone" />
+                                android:textSize="20sp"
+                                />
 
 
                             <TextView
                                 android:id="@+id/disease_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="7dp"
-                                android:layout_marginBottom="5dp"
                                 android:text="Android Developer"
                                 android:textColor="#000"
+                                android:visibility="gone"
                                 android:textSize="14sp"
-                                android:visibility="gone" />
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="7dp"
+                                />
 
 
                             <TextView
                                 android:id="@+id/note_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
                                 android:text="Android Developer"
                                 android:textColor="#000"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:layout_marginBottom="5dp"
+                                />
 
                             <TextView
                                 android:id="@+id/doctor_specialty"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="15dp"
                                 android:text="Android Developer"
                                 android:textColor="#000"
-                                android:textSize="14sp" />
+                                android:textSize="14sp"
+                                android:layout_marginBottom="15dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/gust_name_admin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gust name"
+                                android:textColor="#000"
+                                android:textSize="14sp"
+                                android:layout_marginBottom="5dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/gust_number_admin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gust number"
+                                android:textColor="#000"
+                                android:textSize="14sp"
+                                android:layout_marginBottom="15dp"
+                                />
 
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="30dp"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                >
 
                                 <androidx.cardview.widget.CardView
                                     android:layout_width="120dp"
                                     android:layout_height="match_parent"
-                                    android:layout_marginRight="10dp"
-                                    android:foreground="?android:attr/selectableItemBackground"
                                     app:cardCornerRadius="10dp"
-                                    app:cardElevation="0dp">
+                                    app:cardElevation="0dp"
+                                    android:foreground="?android:attr/selectableItemBackground"
+                                    android:layout_marginRight="10dp"
+                                    >
 
                                     <com.balysv.materialripple.MaterialRippleLayout
-                                        style="@style/RippleStyleWhite"
                                         android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
+                                        android:layout_height="match_parent"
+                                        style="@style/RippleStyleWhite"
+                                        >
 
                                         <Button
                                             android:id="@+id/view_profile_btn"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:background="#0f70ff"
-                                            android:padding="5dp"
                                             android:text="view profile"
+                                            android:textSize="12sp"
+                                            android:background="#0f70ff"
                                             android:textColor="#fff"
-                                            android:textSize="12sp" />
+                                            android:padding="5dp"
+                                            />
 
                                     </com.balysv.materialripple.MaterialRippleLayout>
 
