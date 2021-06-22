@@ -303,6 +303,7 @@ public class SigninFragment extends Fragment {
         return UserID;
     }
 
+    // start from android 11
     private void fingerprint() {
         BiometricManager biometricManager = BiometricManager.from(requireContext());
         switch (biometricManager.canAuthenticate()) {
